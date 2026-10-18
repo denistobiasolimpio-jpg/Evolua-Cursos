@@ -1,0 +1,629 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style></style></head><body><!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolua Cursos | Guia Independente de Cursos e Educação</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .category-scroll {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        .category-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .category-scroll::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" onclick="mudarPagina('home', true); return false;" class="flex items-center gap-3 group">
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">Evolua <span class="text-brand-600">Cursos</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#" onclick="mudarPagina('cursos', true); return false;" class="hover:text-brand-600 transition-colors">Explorar Cursos</a>
+                <a href="#como-funciona" onclick="mudarPagina('home', true);" class="hover:text-brand-600 transition-colors">Como Funciona</a>
+                <a href="https://t.me/CursosEOportunidadesBR" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-telegram text-sky-500"></i> Canal Telegram</a>
+            </nav>
+
+            <!-- Action CTA / Trust Badge -->
+            <div class="hidden sm:flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <i class="fa-solid fa-shield-check"></i> 100% Imparcial
+                </span>
+                <a href="#" onclick="mudarPagina('cursos', true); return false;" class="bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                    Ver Recomendações
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-slate-900 p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#" onclick="mudarPagina('cursos', true); toggleMobileMenu(); return false;" class="block py-2 text-slate-600 font-medium">Explorar Cursos</a>
+            <a href="#como-funciona" onclick="mudarPagina('home', true); toggleMobileMenu();" class="block py-2 text-slate-600 font-medium">Como Funciona</a>
+            <a href="https://t.me/CursosEOportunidadesBR" target="_blank" rel="noopener noreferrer" class="block py-2 text-sky-600 font-medium flex items-center gap-2"><i class="fa-brands fa-telegram"></i> Canal Telegram</a>
+            <div class="pt-2">
+                <a href="#" onclick="mudarPagina('cursos', true); toggleMobileMenu(); return false;" class="block text-center w-full bg-brand-600 text-white py-3 rounded-xl font-medium shadow-md">Ver Recomendações</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL DE PÁGINAS -->
+    <main>
+
+        <!-- ================= PÁGINA INICIAL (HOME) ================= -->
+        <div id="page-home" class="block">
+            <!-- Hero Section -->
+            <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-indigo-50/40 py-12 lg:py-16">
+                <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center max-w-3xl mx-auto space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold uppercase tracking-wider border border-brand-100">
+                            <i class="fa-solid fa-award"></i> Guia Especializado de Educação
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                            Encontre o curso ideal para o seu <span class="bg-gradient-to-r from-brand-600 to-indigo-600 bg-clip-text text-transparent">futuro profissional</span>
+                        </h1>
+                        
+                        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
+                            Analisamos, comparamos e selecionamos de forma independente os melhores cursos do mercado em tecnologia, idiomas, negócios e reforço para você investir sem erro.
+                        </p>
+
+                        <!-- Botão de Ação Direta para a Página de Cursos -->
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                            <a href="#" onclick="mudarPagina('cursos', true); return false;" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl shadow-lg shadow-brand-500/25 transition-all text-center flex items-center justify-center gap-2">
+                                <span>Explorar Todos os Cursos</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="https://cursos.escolaeducacao.com.br/home/XXC02FA" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-2xl shadow-lg transition-all text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-globe text-brand-400"></i> <span>Plataforma Completa Oficial</span>
+                            </a>
+                        </div>
+
+                        <!-- Trust metrics -->
+                        <div class="pt-6 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-slate-200/80 mt-10 text-left">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brand-600 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-filter"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Curadoria Rigorosa</p>
+                                    <p class="text-xs text-slate-500">Seleção de qualidade</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brand-600 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Cursos Gratuitos</p>
+                                    <p class="text-xs text-slate-500">Opções sem custo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brand-600 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Certificado Pago</p>
+                                    <p class="text-xs text-slate-500">Comprovação oficial</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brand-600 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Pagamento em Cartão e Pix</p>
+                                    <p class="text-xs text-slate-500">Facilidade e segurança</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 1: Sobre a Divulgação e Plataforma Oficial -->
+            <section id="como-funciona" class="py-12 bg-white border-y border-slate-200/80">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+                        <div class="space-y-5 max-w-3xl">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider border border-brand-500/30">
+                                <i class="fa-solid fa-bullhorn"></i> Portal de Divulgação
+                            </div>
+                            
+                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug">
+                                Aprenda sem pagar mensalidade na plataforma oficial <span class="text-brand-400">Escola Educação</span>
+                            </h2>
+                            
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                O <strong>Evolua Cursos</strong> é um canal independente criado para selecionar e divulgar as melhores oportunidades de capacitação online. Todos os cursos recomendados em nossa vitrine são hospedados na plataforma oficial <strong>Escola Educação</strong>.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                                <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3">
+                                    <div class="text-emerald-400 text-xl pt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-white">Curso 100% Gratuito</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Acesse todo o conteúdo das aulas sem pagar nada.</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3">
+                                    <div class="text-brand-400 text-xl pt-0.5"><i class="fa-solid fa-file-certificate"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-white">Certificado Opcional</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Você só paga taxa se desejar a emissão do certificado.</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3">
+                                    <div class="text-indigo-400 text-xl pt-0.5"><i class="fa-solid fa-bolt"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-white">Pix e Cartão</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Facilidade e aprovação imediata para a taxa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 2: Canal do Telegram (Sessão Separada) -->
+            <section class="py-12 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gradient-to-r from-sky-500 to-blue-600 rounded-3xl p-8 sm:p-10 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="space-y-3 text-center md:text-left">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold uppercase tracking-wider">
+                                <i class="fa-brands fa-telegram"></i> Comunidade Exclusiva
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Entre no nosso Canal do Telegram!</h3>
+                            <p class="text-sky-100 text-sm sm:text-base max-w-xl">
+                                Receba em primeira mão novos cursos, vagas, materiais e dicas de oportunidades imperdíveis direto no seu celular.
+                            </p>
+                        </div>
+                        <a href="https://t.me/CursosEOportunidadesBR" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap px-8 py-4 bg-white text-sky-600 hover:bg-sky-50 font-bold rounded-2xl shadow-md transition-all flex items-center gap-2 text-sm">
+                            <i class="fa-brands fa-telegram text-lg"></i> Participar do Canal
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 3: Curadoria -->
+            <section id="curadoria" class="py-16 bg-white border-t border-slate-200/80">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Compromisso com a Qualidade</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900">Por que confiar em nossa curadoria?</h2>
+                        <p class="text-slate-600 text-sm">
+                            Nosso papel é filtrar o ruído da internet e recomendar apenas o que realmente gera transformação na vida dos estudantes.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <div class="w-12 h-12 bg-indigo-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6 shadow-sm">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Análise Imparcial</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Não pertencemos a nenhuma escola específica. Testamos a didática, avaliamos o suporte ao aluno e checamos o índice de satisfação real antes de recomendar.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <div class="w-12 h-12 bg-indigo-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6 shadow-sm">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Preços Justos & Descontos</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Negociamos condições especiais e cupons de desconto exclusivos com os criadores e escolas parceiras para que você pague o menor preço possível.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <div class="w-12 h-12 bg-indigo-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6 shadow-sm">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Foco no Seu Objetivo</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Organizamos os cursos por trilhas de carreira e níveis de dificuldade para que você saiba exatamente qual passo dar em direção ao seu sucesso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PÁGINA DE TODOS OS CURSOS ================= -->
+        <div id="page-cursos" class="hidden py-8 bg-white min-h-screen">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Botão para Voltar à Landing Page -->
+                <div class="mb-4">
+                    <button onclick="mudarPagina('home', true)" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-600 bg-slate-100 hover:bg-indigo-50 px-4 py-2 rounded-xl transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </button>
+                </div>
+
+                <div class="mb-8 text-center space-y-2">
+                    <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Catálogo Completo</span>
+                    <h1 class="text-3xl font-extrabold text-slate-900">Explore todos os Cursos Recomendados</h1>
+                    <p class="text-slate-500 text-sm max-w-xl mx-auto">
+                        Utilize a barra de pesquisa ou deslize pelas categorias para encontrar o treinamento perfeito para a sua evolução profissional.
+                    </p>
+                </div>
+
+                <!-- Barra de Pesquisa Exclusiva da Página de Cursos -->
+                <div class="mb-6 max-w-2xl mx-auto">
+                    <div class="relative w-full">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="searchInput" placeholder="Pesquise por curso, ex: Espanhol, Pacote Office..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-300 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent shadow-sm">
+                    </div>
+                </div>
+
+                <!-- Slide / Carrossel Horizontal para Categorias -->
+                <div class="mb-8 pb-3 border-b border-slate-100 overflow-x-auto category-scroll flex items-center gap-3 scroll-smooth" id="category-tabs">
+                    <!-- Gerado via JavaScript -->
+                </div>
+
+                <!-- Course Results Grid (Grade com 2 Colunas) -->
+                <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Gerado via JavaScript -->
+                </div>
+
+                <!-- No results message -->
+                <div id="no-results" class="hidden text-center py-16">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-face-frown"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800">Nenhum curso encontrado</h3>
+                    <p class="text-slate-500 text-sm mt-1">Tente buscar por outro termo ou categoria.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-8 border-b border-slate-800">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-extrabold text-white tracking-tight">Evolua <span class="text-brand-500">Cursos</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        Seu guia independente de cursos nas áreas de tecnologia, negócios, idiomas e reforço escolar. Curadoria sincera para impulsionar sua carreira.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://t.me/CursosEOportunidadesBR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-sky-400 hover:text-sky-300 font-semibold transition-colors">
+                            <i class="fa-brands fa-telegram text-lg"></i> Acessar Canal do Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Transparência</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        <strong>Aviso de Afiliado:</strong> O Evolua Cursos participa de programas de afiliados. Podemos receber compensação por compras feitas através dos nossos links recomendados, sem alterar o valor final para você.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Evolua Cursos. Todos os direitos reservados. Guia independente de cursos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simulated Affiliate Redirect Modal -->
+    <div id="affiliateModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl relative transform transition-all scale-95 opacity-0" id="modalContent">
+            <button onclick="closeAffiliateModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 bg-slate-100 p-2 rounded-full transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-inner">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                
+                <h3 class="text-xl font-bold text-slate-900" id="modalCourseTitle">Redirecionando para o Parceiro Oficial</h3>
+                
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Você está sendo direcionado para a página oficial com o cupom e condição especial garantida pelo nosso guia de curadoria.
+                </p>
+
+                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 text-xs text-slate-500 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-lock text-emerald-600"></i> Ambiente seguro e verificado
+                </div>
+
+                <div class="pt-4 flex flex-col gap-3">
+                    <a id="modalExternalLink" href="#" target="_blank" rel="noopener noreferrer" onclick="closeAffiliateModal()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-center flex items-center justify-center gap-2">
+                        <span>Continuar para a Matrícula</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <button onclick="closeAffiliateModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition-all text-sm">
+                        Voltar ao Guia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para Rotas, Histórico de Navegação, Filtros e Modais -->
+    <script>
+        const MEUS_LINKS_AFILIADO = {
+            "Idiomas": [
+                { titulo: "Espanhol Básico", url: "https://cursos.escolaeducacao.com.br/curso/espanhol-basico/XXC02FA" },
+                { titulo: "Espanhol Intermediário", url: "https://cursos.escolaeducacao.com.br/curso/espanhol-intermediario/XXC02FA" },
+                { titulo: "Espanhol Avançado", url: "https://cursos.escolaeducacao.com.br/curso/espanhol-avancado/XXC02FA" },
+                { titulo: "Inglês Básico", url: "https://cursos.escolaeducacao.com.br/curso/ingles-basico/XXC02FA" },
+                { titulo: "Inglês Intermediário", url: "https://cursos.escolaeducacao.com.br/curso/ingles-intermediario/XXC02FA" },
+                { titulo: "Inglês Avançado", url: "https://cursos.escolaeducacao.com.br/curso/ingles-avancado/XXC02FA" }
+            ],
+            "Administração": [
+                { titulo: "Administração Pública", url: "https://cursos.escolaeducacao.com.br/curso/administracao-publica/XXC02FA" },
+                { titulo: "Secretariado", url: "https://cursos.escolaeducacao.com.br/curso/secretariado/XXC02FA" },
+                { titulo: "Auxiliar Administrativo", url: "https://cursos.escolaeducacao.com.br/curso/auxiliar-administrativo/XXC02FA" },
+                { titulo: "Administração de Empresas", url: "https://cursos.escolaeducacao.com.br/curso/administracao-de-empresas/XXC02FA" },
+                { titulo: "Ganhar Dinheiro na Internet", url: "https://cursos.escolaeducacao.com.br/curso/como-ganhar-dinheiro-na-internet/XXC02FA" }
+            ],
+            "Comunicação e Vendas": [
+                { titulo: "Vendedor de Loja", url: "https://cursos.escolaeducacao.com.br/curso/vendedor-de-loja/XXC02FA" },
+                { titulo: "Vendedor de Loja Online", url: "https://cursos.escolaeducacao.com.br/curso/vendedor-de-loja-online/XXC02FA" },
+                { titulo: "Técnicas de Vendas", url: "https://cursos.escolaeducacao.com.br/curso/tecnicas-de-vendas/XXC02FA" },
+                { titulo: "Atendimento ao Cliente", url: "https://cursos.escolaeducacao.com.br/curso/atendimento-ao-cliente/XXC02FA" }
+            ],
+            "Informática": [
+                { titulo: "Pacote Office Avançado", url: "https://cursos.escolaeducacao.com.br/curso/pacote-office-avancado/XXC02FA" },
+                { titulo: "Pacote Office Intermediário", url: "https://cursos.escolaeducacao.com.br/curso/pacote-office-intermediario/XXC02FA" },
+                { titulo: "Canva", url: "https://cursos.escolaeducacao.com.br/curso/canva/XXC02FA" },
+                { titulo: "Pacote Office Básico", url: "https://cursos.escolaeducacao.com.br/curso/pacote-office-basico/XXC02FA" },
+                { titulo: "Design Gráfico", url: "https://cursos.escolaeducacao.com.br/curso/basico-de-design-grafico/XXC02FA" },
+                { titulo: "Informática Básica", url: "https://cursos.escolaeducacao.com.br/curso/informatica-basica/XXC02FA" },
+                { titulo: "Técnico em Informática", url: "https://cursos.escolaeducacao.com.br/curso/tecnico-em-informatica/XXC02FA" }
+            ],
+            "Culinária": [
+                { titulo: "Culinária Básica", url: "https://cursos.escolaeducacao.com.br/curso/culinaria-basica/XXC02FA" },
+                { titulo: "Cozinha Vegana", url: "https://cursos.escolaeducacao.com.br/curso/cozinha-vegana/XXC02FA" },
+                { titulo: "Cozinha Vegetariana", url: "https://cursos.escolaeducacao.com.br/curso/cozinha-vegetariana/XXC02FA" },
+                { titulo: "Culinária Saudável", url: "https://cursos.escolaeducacao.com.br/curso/culinaria-saudavel/XXC02FA" }
+            ],
+            "Recursos Humanos": [
+                { titulo: "Básico de Soft Skills", url: "https://cursos.escolaeducacao.com.br/curso/curso-basico-de-soft-skills/XXC02FA" },
+                { titulo: "Folha de Pagamento", url: "https://cursos.escolaeducacao.com.br/curso/folha-de-pagamento/XXC02FA" },
+                { titulo: "Recolocação Profissional", url: "https://cursos.escolaeducacao.com.br/curso/recolocacao-profissional/XXC02FA" },
+                { titulo: "Gestão de Pessoas", url: "https://cursos.escolaeducacao.com.br/curso/curso-de-gestao-de-pessoas/XXC02FA" }
+            ]
+        };
+
+        let categoriaAtiva = 'all';
+
+        function mudarPagina(pagina, pushHistory = false) {
+            const pageHome = document.getElementById('page-home');
+            const pageCursos = document.getElementById('page-cursos');
+
+            if (pagina === 'cursos') {
+                pageHome.classList.add('hidden');
+                pageCursos.classList.remove('hidden');
+                if (pushHistory) {
+                    history.pushState({ pagina: 'cursos' }, '', '#cursos');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                pageCursos.classList.add('hidden');
+                pageHome.classList.remove('hidden');
+                if (pushHistory) {
+                    history.pushState({ pagina: 'home' }, '', '#home');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.pagina === 'cursos') {
+                mudarPagina('cursos', false);
+            } else {
+                mudarPagina('home', false);
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+            toggleMobileMenu();
+        });
+
+        function renderizarTabs() {
+            const tabsContainer = document.getElementById('category-tabs');
+            if (!tabsContainer) return;
+            tabsContainer.innerHTML = '';
+
+            const btnAll = document.createElement('button');
+            btnAll.className = `whitespace-nowrap px-5 py-2.5 rounded-xl font-medium text-sm transition-all shrink-0 ${
+                categoriaAtiva === 'all'
+                ? 'bg-brand-600 text-white shadow-sm'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            }`;
+            btnAll.innerHTML = `<i class="fa-solid fa-border-all mr-2"></i> Todos`;
+            btnAll.onclick = () => {
+                categoriaAtiva = 'all';
+                renderizarTabs();
+                renderizarCursos();
+            };
+            tabsContainer.appendChild(btnAll);
+
+            Object.keys(MEUS_LINKS_AFILIADO).forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `whitespace-nowrap px-5 py-2.5 rounded-xl font-medium text-sm transition-all shrink-0 ${
+                    cat === categoriaAtiva 
+                    ? 'bg-brand-600 text-white shadow-sm' 
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`;
+                btn.innerText = cat;
+                btn.onclick = () => {
+                    categoriaAtiva = cat;
+                    renderizarTabs();
+                    renderizarCursos();
+                };
+                tabsContainer.appendChild(btn);
+            });
+        }
+
+        function renderizarCursos(searchTerm = '') {
+            const container = document.getElementById('course-grid');
+            const noResults = document.getElementById('no-results');
+            if (!container) return;
+            container.innerHTML = '';
+
+            let cursosParaExibir = [];
+
+            if (categoriaAtiva === 'all') {
+                Object.keys(MEUS_LINKS_AFILIADO).forEach(cat => {
+                    MEUS_LINKS_AFILIADO[cat].forEach(curso => {
+                        cursosParaExibir.push({ ...curso, categoria: cat });
+                    });
+                });
+            } else {
+                const cursos = MEUS_LINKS_AFILIADO[categoriaAtiva] || [];
+                cursosParaExibir = cursos.map(c => ({ ...c, categoria: categoriaAtiva }));
+            }
+
+            if (searchTerm.trim() !== '') {
+                const term = searchTerm.toLowerCase();
+                cursosParaExibir = cursosParaExibir.filter(c => 
+                    c.titulo.toLowerCase().includes(term) || c.categoria.toLowerCase().includes(term)
+                );
+            }
+
+            if (cursosParaExibir.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            cursosParaExibir.forEach(curso => {
+                const item = document.createElement('div');
+                item.className = 'bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group';
+                
+                item.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span class="px-3 py-1 bg-brand-50 text-brand-700 font-semibold rounded-full border border-brand-100">${curso.categoria}</span>
+                            <span class="text-emerald-600 font-medium flex items-center gap-1"><i class="fa-solid fa-circle-check text-[10px]"></i> Gratuito</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                            ${curso.titulo}
+                        </h3>
+                        
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Curso online completo com certificado opcional. Estude no seu ritmo e pague somente se desejar o certificado via Pix ou Cartão.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <div class="text-xs text-slate-500 flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap text-brand-600"></i> Escola Educação
+                        </div>
+                        <button onclick="openAffiliateModal('${curso.titulo.replace(/'/g, "\\'")}', '${curso.url}')" class="bg-brand-600 hover:bg-brand-700 text-white font-medium text-xs px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center gap-1.5">
+                            <span>Acessar Curso</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        document.addEventListener('input', (e) => {
+            if (e.target && e.target.id === 'searchInput') {
+                renderizarCursos(e.target.value);
+            }
+        });
+
+        const affiliateModal = document.getElementById('affiliateModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalCourseTitle = document.getElementById('modalCourseTitle');
+        const modalExternalLink = document.getElementById('modalExternalLink');
+
+        function openAffiliateModal(courseName, affiliateUrl) {
+            modalCourseTitle.textContent = `Acessar: ${courseName}`;
+            modalExternalLink.href = affiliateUrl;
+            affiliateModal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeAffiliateModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                affiliateModal.classList.add('hidden');
+            }, 150);
+        }
+
+        affiliateModal.addEventListener('click', (e) => {
+            if (e.target === affiliateModal) {
+                closeAffiliateModal();
+            }
+        });
+
+        renderizarTabs();
+        renderizarCursos();
+        history.replaceState({ pagina: 'home' }, '', '#home');
+    </script>
+</body>
+</html>
+</body></html>
